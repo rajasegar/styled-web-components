@@ -6,9 +6,21 @@
 </head>
 <body>
   <h1>Styled web components</h1>
-  <fw-box py="2em" color="red" bg="yellow" font-family="sans-serif">
+  <fw-box width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif">
     <h1>Hello world</h1>
   </fw-box>
+  <fw-flex justify-content="center" flex-direction="row-reverse">
+
+    <fw-box m="1em" width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
+    <h1>Section 1</h1>
+  </fw-box>
+  <fw-box m="1em"  width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
+    <h1>Section 2</h1>
+  </fw-box>
+  </fw-flex>
+  <my-card border-radius="20px" bg="yellow" size="500px" p="1em" border-x="2px solid red">
+    <h1>Card Heading</h1>
+  </my-card>
   <script src="main.js" type="module"></script>
 
 </body>
