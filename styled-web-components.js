@@ -1,4 +1,4 @@
-const SpacingProps = (C) => class extends C {
+const SpaceProps = (C) => class extends C {
   static get observedAttributes() {
     const ownAttrs = [
       'm',
@@ -120,4 +120,4 @@ const TypographyProps = (C) => class extends C {
   }
 }
 
-export { SpacingProps, ColorProps, TypographyProps }
+export { SpaceProps, ColorProps, TypographyProps }

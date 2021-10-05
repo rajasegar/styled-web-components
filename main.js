@@ -1,7 +1,7 @@
-import { SpacingProps, ColorProps, TypographyProps } from './styled-web-components.js'
+import { SpaceProps, ColorProps, TypographyProps } from './styled-web-components.js'
 
 
-class FWBox extends TypographyProps(ColorProps(SpacingProps(HTMLElement))) {
+class FWBox extends TypographyProps(ColorProps(SpaceProps(HTMLElement))) {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
