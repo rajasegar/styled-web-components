@@ -1,7 +1,6 @@
 const SpacingProps = (C) => class extends C {
   static get observedAttributes() {
-    return [
-      ...super.observedAttributes || [],
+    const ownAttrs = [
       'm',
       'mt',
       'mr',
@@ -16,7 +15,9 @@ const SpacingProps = (C) => class extends C {
       'pl',
       'px',
       'py',
-    ]
+    ];
+    const _observedAttrs = super.observedAttributes ? [...super.observedAttributes, ...ownAttrs] : ownAttrs;
+    return _observedAttrs;
   }
 
   attributeChangedCallback(attr) {
@@ -86,7 +87,7 @@ const ColorProps = (C) => class extends C {
 
 const TypographyProps = (C) => class extends C {
   static get observedAttributes() {
-    return [...super.observedAttributes || [], 
+    const ownAttrs =  [
       'font-family',
       'font-size',
       'font-weight',
@@ -94,7 +95,9 @@ const TypographyProps = (C) => class extends C {
       'letter-spacing',
       'text-align',
       'font-style'
-    ]
+    ];
+    const _observedAttrs = super.observedAttributes ? [...super.observedAttributes, ...ownAttrs] : ownAttrs;
+    return _observedAttrs;
   }
 
   attributeChangedCallback(attr) {
