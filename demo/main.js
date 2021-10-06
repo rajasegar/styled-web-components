@@ -6,7 +6,7 @@ import {
   FlexboxProps,
   BorderProps,
   GridProps,
-} from './dist/bundle.js'
+} from '../dist/styled-web-components.min.js'
 
 
 const Box = GridProps(BorderProps(LayoutProps(TypographyProps(ColorProps(SpaceProps(HTMLElement))))))

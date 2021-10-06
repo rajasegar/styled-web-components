@@ -2,8 +2,8 @@
   "name": "styled-web-components",
   "version": "1.0.0",
   "description": "Web component primitives inspired by styled-system",
-  "main": "dist/bundle.js",
-  "module": "dist/bundle.js",
+  "main": "dist/styled-web-components.min.js",
+  "module": "dist/styled-web-components.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
