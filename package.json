@@ -1,7 +1,7 @@
 {
   "name": "styled-web-components",
   "version": "1.0.0",
-  "description": "Web component primitives inspired by styled-system",
+  "description": "Style property primitives for Web components inspired by styled-system",
   "main": "dist/styled-web-components.min.js",
   "module": "dist/styled-web-components.min.js",
   "scripts": {
@@ -12,9 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/rajasegar/styled-web-components.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["styled-web-components", "web-components", "web components","props"],
+  "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/rajasegar/styled-web-components/issues"
   },
