@@ -1,6 +1,6 @@
 # :art: styled-web-components
 
-Style property primitives for Web components inspired by styled-system
+Style property primitives for Web components inspired by [styled-system](https://styled-system.com)
 
 - Zero dependencies :package:
 - Light weight ( < 2KB (gzipped), < 10 KB (minified)) :leaves:
