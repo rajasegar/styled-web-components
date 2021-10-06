@@ -1,6 +1,6 @@
 {
   "name": "styled-web-components",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Style property primitives for Web components inspired by styled-system",
   "main": "dist/styled-web-components.min.js",
   "module": "dist/styled-web-components.min.js",
@@ -12,14 +12,19 @@
     "type": "git",
     "url": "git+https://github.com/rajasegar/styled-web-components.git"
   },
-  "keywords": ["styled-web-components", "web-components", "web components","props"],
+  "keywords": [
+    "styled-web-components",
+    "web-components",
+    "web components",
+    "props"
+  ],
   "author": "Rajasegar Chandran <rajasegar.c@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rajasegar/styled-web-components/issues"
   },
   "homepage": "https://github.com/rajasegar/styled-web-components#readme",
-  "dependencies": { },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
