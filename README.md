@@ -9,7 +9,7 @@
 
 ## Installation
 ```
-npm install styled-web-components
+npm install @rajasegar/styled-web-components
 ```
 
 via CDN:
