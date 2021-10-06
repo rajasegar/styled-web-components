@@ -1,5 +1,5 @@
 {
-  "name": "styled-web-components",
+  "name": "@rajasegar/styled-web-components",
   "version": "1.0.0",
   "description": "Style property primitives for Web components inspired by styled-system",
   "main": "dist/styled-web-components.min.js",
