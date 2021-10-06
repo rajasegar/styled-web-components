@@ -1,6 +1,6 @@
-# styled-web-components
+# :art: styled-web-components
 
-:art: Style property primitives for Web components inspired by styled-system
+Style property primitives for Web components inspired by styled-system
 
 - Zero dependencies :package:
 - Light weight ( < 2KB (gzipped), < 10 KB (minified)) :leaves:
@@ -24,10 +24,10 @@ via CDN:
 Create your own Custom element with composing props 
 
 ```js
-import { SpacingProps, ColorProps, TypographyProps } from 'styled-web-components'
+import { SpaceProps, ColorProps, TypographyProps } from 'styled-web-components'
 
 
-class FWBox extends TypographyProps(ColorProps(SpacingProps(HTMLElement))) {
+class FWBox extends TypographyProps(ColorProps(SpaceProps(HTMLElement))) {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
