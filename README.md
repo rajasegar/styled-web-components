@@ -15,7 +15,7 @@ npm install @rajasegar/styled-web-components
 via CDN:
 
 ```
-<script src="https://unpkg.com/styled-web-components/dist/styled-web-components.min.js"></script>
+<script src="https://unpkg.com/@rajasegar/styled-web-components@1.0.0/dist/styled-web-components.min.js"></script>
 ```
 
 ## Usage
