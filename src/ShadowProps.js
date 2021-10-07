@@ -1,10 +1,8 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  'text-shadow': 'textShadow',
+  'box-shadow': 'boxShadow',
 }
-
-export const ColorProps = (C) =>
+export const ShadowProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)

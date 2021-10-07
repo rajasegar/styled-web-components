@@ -1,10 +1,12 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  position: 'position',
+  'z-index': 'zIndex',
+  top: 'top',
+  right: 'right',
+  bottom: 'bottom',
+  left: 'left',
 }
-
-export const ColorProps = (C) =>
+export const PositionProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)

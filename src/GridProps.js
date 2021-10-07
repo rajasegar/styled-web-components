@@ -1,13 +1,22 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  'grid-gap': 'gridGap',
+  'grid-row-gap': 'gridRowGap',
+  'grid-column-gap': 'gridColumnGap',
+  'grid-column': 'gridColumn',
+  'grid-row': 'gridRow',
+  'grid-area': 'gridArea',
+  'grid-auto-flow': 'gridAutoFlow',
+  'grid-auto-rows': 'gridAutoRows',
+  'grid-auto-columns': 'gridAutoColumns',
+  'grid-template-rows': 'gridTemplateRows',
+  'grid-template-columns': 'gridTemplateColumns',
+  'grid-template-areas': 'gridTemplateArea',
 }
-
-export const ColorProps = (C) =>
+export const GridProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)
+
       const _observedAttrs = super.observedAttributes
         ? [...super.observedAttributes, ...ownAttrs]
         : ownAttrs
@@ -20,7 +29,7 @@ export const ColorProps = (C) =>
       if (!this.shadowRoot) {
         this.attachShadow({ mode: 'open' })
         const template = document.createElement('template')
-        template.innerHTML = '<style>:host{ display: block; }</style>'
+        template.innerHTML = '<style>:host{ display: grid; }</style>'
         this.shadowRoot.appendChild(template.content.cloneNode(true))
       }
       this.applyStyles()

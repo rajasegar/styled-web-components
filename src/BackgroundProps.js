@@ -1,13 +1,15 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  background: 'background',
+  'background-image': 'backgroundImage',
+  'background-size': 'backgroundSize',
+  'background-position': 'backgroundPosition',
+  'background-repeat': 'backgroundRepeat',
 }
-
-export const ColorProps = (C) =>
+export const BackgroundProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)
+
       const _observedAttrs = super.observedAttributes
         ? [...super.observedAttributes, ...ownAttrs]
         : ownAttrs

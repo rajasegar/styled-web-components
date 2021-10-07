@@ -1,13 +1,23 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  'align-items': 'alignItems',
+  'align-content': 'alignContent',
+  'justify-items': 'justifyItems',
+  'justify-content': 'justifyContent',
+  'flex-wrap': 'flexWrap',
+  'flex-direction': 'flexDirection',
+  flex: 'flex',
+  'flex-grow': 'flexGrow',
+  'flex-shrink': 'flexShrink',
+  'flex-basis': 'flexBasis',
+  'justify-self': 'justifySelf',
+  'align-self': 'alignSelf',
+  order: 'order',
 }
-
-export const ColorProps = (C) =>
+export const FlexboxProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)
+
       const _observedAttrs = super.observedAttributes
         ? [...super.observedAttributes, ...ownAttrs]
         : ownAttrs
@@ -20,7 +30,7 @@ export const ColorProps = (C) =>
       if (!this.shadowRoot) {
         this.attachShadow({ mode: 'open' })
         const template = document.createElement('template')
-        template.innerHTML = '<style>:host{ display: block; }</style>'
+        template.innerHTML = '<style>:host{ display: flex; }</style>'
         this.shadowRoot.appendChild(template.content.cloneNode(true))
       }
       this.applyStyles()

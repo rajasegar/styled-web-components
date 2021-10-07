@@ -1,13 +1,22 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  width: 'width',
+  height: 'height',
+  'min-width': 'minWidth',
+  'min-height': 'minHeight',
+  'max-width': 'maxWidth',
+  'max-height': 'maxHeight',
+  size: 'size',
+  display: 'display',
+  'vertical-align': 'verticalAlign',
+  overflow: 'overflow',
+  'overflow-x': 'overflowX',
+  'overflow-y': 'overflowY',
 }
-
-export const ColorProps = (C) =>
+export const LayoutProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)
+
       const _observedAttrs = super.observedAttributes
         ? [...super.observedAttributes, ...ownAttrs]
         : ownAttrs
@@ -36,7 +45,16 @@ export const ColorProps = (C) =>
       attributes
         .filter((attr) => properties[attr.name])
         .forEach((attr) => {
-          cssRule.style[properties[attr.name]] = attr.value
+          console.log(attr.name)
+          switch (attr.name) {
+            case 'size':
+              cssRule.style.width = attr.value
+              cssRule.style.height = attr.value
+              break
+
+            default:
+              cssRule.style[properties[attr.name]] = attr.value
+          }
         })
     }
 

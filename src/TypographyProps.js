@@ -1,10 +1,13 @@
 const properties = {
-  color: 'color',
-  bg: 'backgroundColor',
-  opacity: 'opacity',
+  'font-family': 'fontFamily',
+  'font-size': 'fontSize',
+  'font-weight': 'fontWeight',
+  'line-height': 'lineHeight',
+  'letter-spacing': 'letterSpacing',
+  'text-align': 'textAlign',
+  'font-style': 'fontStyle',
 }
-
-export const ColorProps = (C) =>
+export const TypographyProps = (C) =>
   class extends C {
     static get observedAttributes() {
       const ownAttrs = Object.keys(properties)
