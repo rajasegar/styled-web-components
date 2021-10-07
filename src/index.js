@@ -20,6 +20,36 @@ const SpaceProps = (C) => class extends C {
     return _observedAttrs;
   }
 
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open'})
+    const template = document.createElement('template')
+    template.innerHTML = '<style></style>'
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    const styleSheet = this.shadowRoot.styleSheets[0]
+    const attributes = Array.from(this.attributes)
+const properties = {
+      m: 'margin',
+      p: 'padding',
+      mt: 'marginTop',
+      mr: 'marginRight',
+      mb: 'marginBottom',
+      ml: 'marginLeft',
+      pt: 'paddingTop',
+      pr: 'paddingRight',
+      pb: 'paddingBottom',
+      pl: 'paddingLeft',
+    }
+
+    let styles = '';
+    attributes.forEach(attr => {
+      if(properties[attr.name]) {
+        styles += `${properties[attr.name]}: ${attr.value};`
+      }
+    })
+    styleSheet.insertRule(`:host { ${styles} }`);
+  }
+
   attributeChangedCallback(attr) {
     if(super.attributeChangedCallback) super.attributeChangedCallback(attr)
     const properties = {
@@ -35,6 +65,7 @@ const SpaceProps = (C) => class extends C {
       pl: 'paddingLeft',
     }
     const _value = this.getAttribute(attr);
+    /*
     switch (attr) {
       case 'mx':
         this.container.style.marginRight = _value
@@ -59,6 +90,7 @@ const SpaceProps = (C) => class extends C {
       default:
         this.container.style[properties[attr]] = _value
     }
+    */
   }
 
 }

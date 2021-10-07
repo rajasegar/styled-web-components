@@ -1,29 +1,28 @@
 import { 
-  SpaceProps, 
-  ColorProps, 
   TypographyProps, 
   LayoutProps, 
   FlexboxProps,
   BorderProps,
   GridProps,
-} from '../dist/styled-web-components.min.js'
+} from './src/index.js'
+
+import { SpaceProps } from './src/SpaceProps.js'
+import { ColorProps } from './src/ColorProps.js'
 
 
-const Box = GridProps(BorderProps(LayoutProps(TypographyProps(ColorProps(SpaceProps(HTMLElement))))))
 
-class FWBox extends Box {
+class FWBox extends SpaceProps(ColorProps(HTMLElement)) {
   constructor() {
     super()
-    this.attachShadow({ mode: 'open' })
     const template = document.createElement('template')
-    template.innerHTML = '<div><slot></slot></div>'
+    template.innerHTML = '<slot></slot>'
     this.shadowRoot.appendChild(template.content.cloneNode(true))
-    this.container = this.shadowRoot.querySelector('div')
   }
 }
 
 customElements.define('fw-box', FWBox)
 
+  /*
 class FWFlex extends FlexboxProps(HTMLElement) {
   constructor() {
     super()
@@ -89,3 +88,4 @@ class Avatar extends BorderProps(HTMLImageElement) {
 }
 
 customElements.define('fw-avatar', Avatar, { extends: 'img' })
+*/
