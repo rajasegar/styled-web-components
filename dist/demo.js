@@ -1,95 +1,108 @@
 import {
-    SpaceProps,
-    ColorProps,
-    TypographyProps,
-    LayoutProps,
-    FlexboxProps,
-    BorderProps,
-    GridProps,
+  SpaceProps,
+  ColorProps,
+  TypographyProps,
+  LayoutProps,
+  FlexboxProps,
+  BorderProps,
+  GridProps,
 } from './styled-web-components.min.js'
 
-const Box = GridProps(
-    BorderProps(
-        LayoutProps(TypographyProps(ColorProps(SpaceProps(HTMLElement))))
-    )
+class SWBox extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      :host { display: block; } 
+      </style><slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+    this.container = this.shadowRoot.querySelector('div')
+  }
+}
+
+customElements.define(
+  'sw-box',
+  TypographyProps(ColorProps(BorderProps(SpaceProps(LayoutProps(SWBox)))))
 )
 
-class FWBox extends Box {
-    constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
-        const template = document.createElement('template')
-        template.innerHTML = '<div><slot></slot></div>'
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        this.container = this.shadowRoot.querySelector('div')
-    }
+class SWFlex extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+        :host { display: flex; }
+        </style>
+        <slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 }
 
-customElements.define('fw-box', FWBox)
+customElements.define('sw-flex', FlexboxProps(SWFlex))
 
-class FWFlex extends FlexboxProps(HTMLElement) {
-    constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
-        const template = document.createElement('template')
-        template.innerHTML = '<div><slot></slot></div>'
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        this.container = this.shadowRoot.querySelector('div')
-        this.container.style.display = 'flex'
-    }
+class SWGrid extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      :host { display: grid; }
+      </style>
+      <slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 }
 
-customElements.define('fw-flex', FWFlex)
+customElements.define('sw-grid', GridProps(SWGrid))
 
-class FWGrid extends GridProps(HTMLElement) {
-    constructor() {
-        super()
-        this.attachShadow({ mode: 'open' })
-        const template = document.createElement('template')
-        template.innerHTML = '<div><slot></slot></div>'
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        this.container = this.shadowRoot.querySelector('div')
-        this.container.style.display = 'grid'
-    }
+class MyCard extends HTMLElement {
+  constructor() {
+    super()
+
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      :host { display: block; }
+      </style>
+      <slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 }
 
-customElements.define('fw-grid', FWGrid)
+customElements.define(
+  'my-card',
+  ColorProps(BorderProps(LayoutProps(SpaceProps(MyCard))))
+)
 
-class MyCard extends ColorProps(
-    BorderProps(LayoutProps(SpaceProps(HTMLElement)))
-) {
-    constructor() {
-        super()
+class BlockText extends HTMLElement {
+  constructor() {
+    super()
 
-        this.attachShadow({ mode: 'open' })
-        const template = document.createElement('template')
-        template.innerHTML = '<div><slot></slot></div>'
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        this.container = this.shadowRoot.querySelector('div')
-    }
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      :host { display: block; }
+      </style>
+      <slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 }
 
-customElements.define('my-card', MyCard)
+customElements.define('block-text', TypographyProps(BlockText))
 
-class BlockText extends TypographyProps(HTMLElement) {
-    constructor() {
-        super()
-
-        this.attachShadow({ mode: 'open' })
-        const template = document.createElement('template')
-        template.innerHTML = '<p><slot></slot></p>'
-        this.shadowRoot.appendChild(template.content.cloneNode(true))
-        this.container = this.shadowRoot.querySelector('p')
-    }
+class Avatar extends HTMLElement {
+  constructor() {
+    super()
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      img {  }
+      </style>
+      <img src="${this.getAttribute('src')}" />
+      `
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
 }
 
-customElements.define('block-text', BlockText)
-
-class Avatar extends BorderProps(HTMLImageElement) {
-    constructor() {
-        super()
-        this.container = this
-    }
-}
-
-customElements.define('fw-avatar', Avatar, { extends: 'img' })
+customElements.define('sw-avatar', LayoutProps(BorderProps(Avatar)))
