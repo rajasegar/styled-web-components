@@ -6,7 +6,8 @@
   "module": "dist/styled-web-components.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rollup -c"
+    "build": "NODE_ENV=prod rollup -c",
+    "start": "rollup -c -w"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,13 @@
     "url": "https://github.com/rajasegar/styled-web-components/issues"
   },
   "homepage": "https://github.com/rajasegar/styled-web-components#readme",
-  "dependencies": {},
   "devDependencies": {
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "prettier": "^2.4.1",
     "rollup": "^2.58.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^1.1.0",
     "rollup-plugin-terser": "^7.0.2"
   }
 }
