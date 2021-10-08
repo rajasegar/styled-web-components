@@ -3,7 +3,7 @@
 Style property primitives for Web components inspired by [styled-system](https://styled-system.com)
 
 - Zero dependencies :package:
-- Light weight ( < 2KB (gzipped), < 10 KB (minified)) :leaves:
+- Light weight ( just 1.9 KB gzipped ) :leaves:
 - Convenient and shorthand property names like (m,p, mx, px, etc.,) :wrench: :hammer:
 - No build or compilation required :zap:
 
