@@ -1,6 +1,6 @@
 # :art: styled-web-components
 
-[![npm version](http://img.shields.io/npm/v/@rajasegar/styled-web-components.svg?style=flat)](https://npmjs.org/package/@rajasegar/styled-web-coomponents "View this project on npm")
+[![npm version](http://img.shields.io/npm/v/@rajasegar/styled-web-components.svg?style=flat)](https://npmjs.org/package/@rajasegar/styled-web-components "View this project on npm")
 
 Style property primitives for Web components inspired by [styled-system](https://styled-system.com)
 
