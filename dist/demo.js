@@ -6,6 +6,8 @@ import {
   FlexboxProps,
   BorderProps,
   GridProps,
+  HoverProps,
+  FocusProps,
 } from './styled-web-components.min.js'
 
 class SWBox extends HTMLElement {
@@ -106,3 +108,57 @@ class Avatar extends HTMLElement {
 }
 
 customElements.define('sw-avatar', LayoutProps(BorderProps(Avatar)))
+
+class MyHoverCard extends HTMLElement {
+  constructor() {
+    super()
+
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      :host { display: block; }
+      </style>
+      <slot></slot>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
+}
+
+customElements.define(
+  'my-hover-card',
+  HoverProps(ColorProps(SpaceProps(MyHoverCard)))
+)
+
+class CustomInput extends HTMLElement {
+  constructor() {
+    super()
+
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      input { display: block; }
+      </style>
+      <input type="text" placeholder="Your email" />`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
+}
+
+customElements.define('custom-input', FocusProps(SpaceProps(CustomInput)))
+
+class CustomButton extends HTMLElement {
+  constructor() {
+    super()
+
+    this.attachShadow({ mode: 'open' })
+    const template = document.createElement('template')
+    template.innerHTML = `<style>
+      button { display: block; }
+      </style>
+      <button type="button"><slot></slot></button>`
+    this.shadowRoot.appendChild(template.content.cloneNode(true))
+  }
+}
+
+customElements.define(
+  'custom-button',
+  HoverProps(BorderProps(ColorProps(FocusProps(SpaceProps(CustomButton)))))
+)

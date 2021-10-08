@@ -1,1 +1,743 @@
-var t,e;(t=self.document)&&!t.getElementById("livereloadscript")&&((e=t.createElement("script")).async=1,e.src="//"+(self.location.host||"localhost").split(":")[0]+":35729/livereload.js?snipver=1",e.id="livereloadscript",t.getElementsByTagName("head")[0].appendChild(e)),Object.defineProperty(exports,"__esModule",{value:!0});const r={background:"background","background-image":"backgroundImage","background-size":"backgroundSize","background-position":"backgroundPosition","background-repeat":"backgroundRepeat"},s={border:"border","border-width":"borderWidth","border-style":"borderStyle","border-color":"borderColor","border-radius":"borderRadius","border-top":"borderTop","border-top-width":"borderTopWidth","border-top-style":"borderTopStyle","border-top-color":"borderTopColor","border-top-left-radius":"borderTopLeftRadius","border-top-right-radius":"borderTopRightRadius","border-bottom":"borderBottom","border-bottom-width":"borderBottomWidth","border-bottom-style":"borderBottomStyle","border-bottom-color":"borderBottomColor","border-bottom-left-radius":"borderBottomLeftRadius","border-bottom-right-radius":"borderBottomRightRadius","border-right":"borderRight","border-right-width":"borderRightWidth","border-right-style":"borderRightStyle","border-right-color":"borderRightColor","border-left":"borderLeft","border-left-width":"borderLeftWidth","border-left-style":"borderLeftStyle","border-left-color":"borderLeftColor","border-x":"noop","border-y":"noop"},o={color:"color",bg:"backgroundColor",opacity:"opacity"},a={"align-items":"alignItems","align-content":"alignContent","justify-items":"justifyItems","justify-content":"justifyContent","flex-wrap":"flexWrap","flex-direction":"flexDirection",flex:"flex","flex-grow":"flexGrow","flex-shrink":"flexShrink","flex-basis":"flexBasis","justify-self":"justifySelf","align-self":"alignSelf",order:"order"},i={"grid-gap":"gridGap","grid-row-gap":"gridRowGap","grid-column-gap":"gridColumnGap","grid-column":"gridColumn","grid-row":"gridRow","grid-area":"gridArea","grid-auto-flow":"gridAutoFlow","grid-auto-rows":"gridAutoRows","grid-auto-columns":"gridAutoColumns","grid-template-rows":"gridTemplateRows","grid-template-columns":"gridTemplateColumns","grid-template-areas":"gridTemplateArea"},l={width:"width",height:"height","min-width":"minWidth","min-height":"minHeight","max-width":"maxWidth","max-height":"maxHeight",size:"size",display:"display","vertical-align":"verticalAlign",overflow:"overflow","overflow-x":"overflowX","overflow-y":"overflowY"},u={position:"position","z-index":"zIndex",top:"top",right:"right",bottom:"bottom",left:"left"},d={"text-shadow":"textShadow","box-shadow":"boxShadow"},b={m:"margin",p:"padding",mt:"marginTop",mr:"marginRight",mb:"marginBottom",ml:"marginLeft",pt:"paddingTop",pr:"paddingRight",pb:"paddingBottom",pl:"paddingLeft",mx:"noop",my:"noop",px:"noop",py:"noop"},h={"font-family":"fontFamily","font-size":"fontSize","font-weight":"fontWeight","line-height":"lineHeight","letter-spacing":"letterSpacing","text-align":"textAlign","font-style":"fontStyle"};exports.BackgroundProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(r);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>r[t.name])).forEach((t=>{e.style[r[t.name]]=t.value}))}attributeChangedCallback(t,e,s){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,s);this.getCSSRule().style[r[t]]=s}},exports.BorderProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(s);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=this.getCSSRule();Array.from(this.attributes).filter((t=>s[t.name])).forEach((e=>{switch(e){case"border-x":t.style.borderLeft=e.value,t.style.borderRight=e.value;break;case"border-y":t.style.borderTop=e.value,t.style.borderBottom=e.value;break;default:t.style[s[e.name]]=e.value}}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);const o=this.getCSSRule();switch(t){case"border-x":o.style.borderLeft=r,o.style.borderRight=r;break;case"border-y":o.style.borderTop=r,o.style.borderBottom=r;break;default:o.style[s[t]]=r}}},exports.ColorProps=t=>class extends t{static get observedAttributes(){const t=["color","bg","opacity"];return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>o[t.name])).forEach((t=>{e.style[o[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[o[t]]=r}},exports.FlexboxProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(a);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>a[t.name])).forEach((t=>{e.style[a[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[a[t]]=r}},exports.GridProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(i);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>i[t.name])).forEach((t=>{e.style[i[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[i[t]]=r}},exports.LayoutProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(l);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}applyStyle(){const t=this.getCSSRule();Array.from(this.attributes).filter((t=>l[t.name])).forEach((e=>{"size"===e?(t.style.width=newValue,t.style.height=newValue):t.style[l[e.name]]=e.value}))}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);const s=this.getCSSRule();"size"===t?(s.style.width=r,s.style.height=r):s.style[l[t]]=r}},exports.PositionProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(u);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>u[t.name])).forEach((t=>{e.style[u[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[u[t]]=r}},exports.ShadowProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(d);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>d[t.name])).forEach((t=>{e.style[d[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[d[t]]=r}},exports.SpaceProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(b);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.host=this.getAttribute("host"),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.host||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>b[t.name])).forEach((t=>{switch(t){case"mx":e.style.marginRight=t.value,e.style.marginLeft=t.value;break;case"my":e.style.marginTop=t.value,e.style.marginBottom=t.value;break;case"px":e.style.paddingLeft=t.value,e.style.paddingRight=t.value;break;case"py":e.style.paddingBottom=t.value,e.style.paddingTop=t.value;break;default:e.style[b[t.name]]=t.value}}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);const s=this.getCSSRule();switch(t){case"mx":s.style.marginRight=r,s.style.marginLeft=r;break;case"my":s.style.marginTop=r,s.style.marginBottom=r;break;case"px":s.style.paddingLeft=r,s.style.paddingRight=r;break;case"py":s.style.paddingBottom=r,s.style.paddingTop=r;break;default:s.style[b[t]]=r}}},exports.TypographyProps=t=>class extends t{static get observedAttributes(){const t=Object.keys(h);return super.observedAttributes?[...super.observedAttributes,...t]:t}constructor(){super(),this.applyStyle()}getCSSRule(){const t=this.shadowRoot.styleSheets[0],[e]=Array.from(t.cssRules).filter((t=>t.selectorText===this.getAttribute("host")||":host"));return e}applyStyle(){const t=Array.from(this.attributes),e=this.getCSSRule();t.filter((t=>h[t.name])).forEach((t=>{e.style[h[t.name]]=t.value}))}attributeChangedCallback(t,e,r){super.attributeChangedCallback&&super.attributeChangedCallback(t,e,r);this.getCSSRule().style[h[t]]=r}};
+
+(function(l, r) { if (!l || l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (self.location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(self.document);
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+const properties$9 = {
+  background: 'background',
+  'background-image': 'backgroundImage',
+  'background-size': 'backgroundSize',
+  'background-position': 'backgroundPosition',
+  'background-repeat': 'backgroundRepeat',
+};
+const BackgroundProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$9);
+
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$9[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$9[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$9[attr]] = newValue;
+    }
+  };
+
+const properties$8 = {
+  border: 'border',
+  'border-width': 'borderWidth',
+  'border-style': 'borderStyle',
+  'border-color': 'borderColor',
+  'border-radius': 'borderRadius',
+  'border-top': 'borderTop',
+  'border-top-width': 'borderTopWidth',
+  'border-top-style': 'borderTopStyle',
+  'border-top-color': 'borderTopColor',
+  'border-top-left-radius': 'borderTopLeftRadius',
+  'border-top-right-radius': 'borderTopRightRadius',
+  'border-bottom': 'borderBottom',
+  'border-bottom-width': 'borderBottomWidth',
+  'border-bottom-style': 'borderBottomStyle',
+  'border-bottom-color': 'borderBottomColor',
+  'border-bottom-left-radius': 'borderBottomLeftRadius',
+  'border-bottom-right-radius': 'borderBottomRightRadius',
+  'border-right': 'borderRight',
+  'border-right-width': 'borderRightWidth',
+  'border-right-style': 'borderRightStyle',
+  'border-right-color': 'borderRightColor',
+  'border-left': 'borderLeft',
+  'border-left-width': 'borderLeftWidth',
+  'border-left-style': 'borderLeftStyle',
+  'border-left-color': 'borderLeftColor',
+  'border-x': 'noop',
+  'border-y': 'noop',
+};
+const BorderProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$8);
+
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+    applyStyle() {
+      const cssRule = this.getCSSRule();
+      const attributes = Array.from(this.attributes);
+
+      attributes
+        .filter((attr) => properties$8[attr.name])
+        .forEach((attr) => {
+          switch (attr) {
+            case 'border-x':
+              cssRule.style.borderLeft = attr.value;
+              cssRule.style.borderRight = attr.value;
+              break
+            case 'border-y':
+              cssRule.style.borderTop = attr.value;
+              cssRule.style.borderBottom = attr.value;
+              break
+
+            default:
+              cssRule.style[properties$8[attr.name]] = attr.value;
+          }
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+
+      const cssRule = this.getCSSRule();
+      switch (attr) {
+        case 'border-x':
+          cssRule.style.borderLeft = newValue;
+          cssRule.style.borderRight = newValue;
+          break
+        case 'border-y':
+          cssRule.style.borderTop = newValue;
+          cssRule.style.borderBottom = newValue;
+          break
+
+        default:
+          cssRule.style[properties$8[attr]] = newValue;
+      }
+    }
+  };
+
+const properties$7 = {
+  color: 'color',
+  bg: 'backgroundColor',
+  opacity: 'opacity',
+};
+const ColorProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = ['color', 'bg', 'opacity'];
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$7[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$7[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$7[attr]] = newValue;
+    }
+  };
+
+const properties$6 = {
+  'align-items': 'alignItems',
+  'align-content': 'alignContent',
+  'justify-items': 'justifyItems',
+  'justify-content': 'justifyContent',
+  'flex-wrap': 'flexWrap',
+  'flex-direction': 'flexDirection',
+  flex: 'flex',
+  'flex-grow': 'flexGrow',
+  'flex-shrink': 'flexShrink',
+  'flex-basis': 'flexBasis',
+  'justify-self': 'justifySelf',
+  'align-self': 'alignSelf',
+  order: 'order',
+};
+const FlexboxProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$6);
+
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$6[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$6[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$6[attr]] = newValue;
+    }
+  };
+
+const FocusProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = ['focus'];
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    applyStyle() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const _host = this.host || ':host';
+      const selector = _host === ':host' ? ':host(:focus)' : `${_host}:focus`;
+      styleSheet.insertRule(
+        `${selector} { ${this.getAttribute('focus')} }`,
+        styleSheet.cssRules.length
+      );
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      this.applyStyle();
+    }
+  };
+
+const properties$5 = {
+  'grid-gap': 'gridGap',
+  'grid-row-gap': 'gridRowGap',
+  'grid-column-gap': 'gridColumnGap',
+  'grid-column': 'gridColumn',
+  'grid-row': 'gridRow',
+  'grid-area': 'gridArea',
+  'grid-auto-flow': 'gridAutoFlow',
+  'grid-auto-rows': 'gridAutoRows',
+  'grid-auto-columns': 'gridAutoColumns',
+  'grid-template-rows': 'gridTemplateRows',
+  'grid-template-columns': 'gridTemplateColumns',
+  'grid-template-areas': 'gridTemplateArea',
+};
+const GridProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$5);
+
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$5[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$5[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$5[attr]] = newValue;
+    }
+  };
+
+const HoverProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = ['hover'];
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    applyStyle() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const _host = this.host || ':host';
+      const selector = _host === ':host' ? ':host(:hover)' : `${_host}:hover`;
+      styleSheet.insertRule(
+        `${selector} { ${this.getAttribute('hover')} }`,
+        styleSheet.cssRules.length
+      );
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      this.applyStyle();
+    }
+  };
+
+const properties$4 = {
+  width: 'width',
+  height: 'height',
+  'min-width': 'minWidth',
+  'min-height': 'minHeight',
+  'max-width': 'maxWidth',
+  'max-height': 'maxHeight',
+  size: 'size',
+  display: 'display',
+  'vertical-align': 'verticalAlign',
+  overflow: 'overflow',
+  'overflow-x': 'overflowX',
+  'overflow-y': 'overflowY',
+};
+
+const LayoutProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$4);
+
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    applyStyle() {
+      const cssRule = this.getCSSRule();
+      const attributes = Array.from(this.attributes);
+
+      attributes
+        .filter((attr) => properties$4[attr.name])
+        .forEach((attr) => {
+          if (attr === 'size') {
+            cssRule.style.width = newValue;
+            cssRule.style.height = newValue;
+          } else {
+            cssRule.style[properties$4[attr.name]] = attr.value;
+          }
+        });
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+
+      const cssRule = this.getCSSRule();
+
+      if (attr === 'size') {
+        cssRule.style.width = newValue;
+        cssRule.style.height = newValue;
+      } else {
+        cssRule.style[properties$4[attr]] = newValue;
+      }
+    }
+  };
+
+const properties$3 = {
+  position: 'position',
+  'z-index': 'zIndex',
+  top: 'top',
+  right: 'right',
+  bottom: 'bottom',
+  left: 'left',
+};
+const PositionProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$3);
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$3[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$3[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$3[attr]] = newValue;
+    }
+  };
+
+const properties$2 = {
+  'text-shadow': 'textShadow',
+  'box-shadow': 'boxShadow',
+};
+const ShadowProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$2);
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$2[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties$2[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+      const cssRule = this.getCSSRule();
+
+      cssRule.style[properties$2[attr]] = newValue;
+    }
+  };
+
+const properties$1 = {
+  m: 'margin',
+  p: 'padding',
+  mt: 'marginTop',
+  mr: 'marginRight',
+  mb: 'marginBottom',
+  ml: 'marginLeft',
+  pt: 'paddingTop',
+  pr: 'paddingRight',
+  pb: 'paddingBottom',
+  pl: 'paddingLeft',
+  mx: 'noop',
+  my: 'noop',
+  px: 'noop',
+  py: 'noop',
+};
+
+const SpaceProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties$1);
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.host = this.getAttribute('host');
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.host || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties$1[attr.name])
+        .forEach((attr) => {
+          switch (attr) {
+            case 'mx':
+              cssRule.style.marginRight = attr.value;
+              cssRule.style.marginLeft = attr.value;
+              break
+
+            case 'my':
+              cssRule.style.marginTop = attr.value;
+              cssRule.style.marginBottom = attr.value;
+              break
+
+            case 'px':
+              cssRule.style.paddingLeft = attr.value;
+              cssRule.style.paddingRight = attr.value;
+              break
+
+            case 'py':
+              cssRule.style.paddingBottom = attr.value;
+              cssRule.style.paddingTop = attr.value;
+              break
+
+            default:
+              cssRule.style[properties$1[attr.name]] = attr.value;
+          }
+        });
+    }
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback)
+        super.attributeChangedCallback(attr, oldValue, newValue);
+
+      const cssRule = this.getCSSRule();
+
+      switch (attr) {
+        case 'mx':
+          cssRule.style.marginRight = newValue;
+          cssRule.style.marginLeft = newValue;
+          break
+
+        case 'my':
+          cssRule.style.marginTop = newValue;
+          cssRule.style.marginBottom = newValue;
+          break
+
+        case 'px':
+          cssRule.style.paddingLeft = newValue;
+          cssRule.style.paddingRight = newValue;
+          break
+
+        case 'py':
+          cssRule.style.paddingBottom = newValue;
+          cssRule.style.paddingTop = newValue;
+          break
+
+        default:
+          cssRule.style[properties$1[attr]] = newValue;
+      }
+    }
+  };
+
+const properties = {
+  'font-family': 'fontFamily',
+  'font-size': 'fontSize',
+  'font-weight': 'fontWeight',
+  'line-height': 'lineHeight',
+  'letter-spacing': 'letterSpacing',
+  'text-align': 'textAlign',
+  'font-style': 'fontStyle',
+};
+
+const TypographyProps = (C) =>
+  class extends C {
+    static get observedAttributes() {
+      const ownAttrs = Object.keys(properties);
+      const _observedAttrs = super.observedAttributes
+        ? [...super.observedAttributes, ...ownAttrs]
+        : ownAttrs;
+      return _observedAttrs
+    }
+
+    constructor() {
+      super();
+      this.applyStyle();
+    }
+
+    getCSSRule() {
+      const styleSheet = this.shadowRoot.styleSheets[0];
+      const [cssRule] = Array.from(styleSheet.cssRules).filter(
+        (rule) => rule.selectorText === this.getAttribute('host') || ':host'
+      );
+      return cssRule
+    }
+
+    applyStyle() {
+      const attributes = Array.from(this.attributes);
+      const cssRule = this.getCSSRule();
+
+      attributes
+        .filter((attr) => properties[attr.name])
+        .forEach((attr) => {
+          cssRule.style[properties[attr.name]] = attr.value;
+        });
+    }
+
+    attributeChangedCallback(attr, oldValue, newValue) {
+      if (super.attributeChangedCallback) {
+        super.attributeChangedCallback(attr, oldValue, newValue);
+      }
+
+      const cssRule = this.getCSSRule();
+      cssRule.style[properties[attr]] = newValue;
+    }
+  };
+
+exports.BackgroundProps = BackgroundProps;
+exports.BorderProps = BorderProps;
+exports.ColorProps = ColorProps;
+exports.FlexboxProps = FlexboxProps;
+exports.FocusProps = FocusProps;
+exports.GridProps = GridProps;
+exports.HoverProps = HoverProps;
+exports.LayoutProps = LayoutProps;
+exports.PositionProps = PositionProps;
+exports.ShadowProps = ShadowProps;
+exports.SpaceProps = SpaceProps;
+exports.TypographyProps = TypographyProps;
