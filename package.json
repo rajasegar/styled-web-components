@@ -1,6 +1,6 @@
 {
   "name": "@rajasegar/styled-web-components",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Style property primitives for Web components inspired by styled-system",
   "main": "dist/styled-web-components.min.js",
   "module": "dist/styled-web-components.min.js",
