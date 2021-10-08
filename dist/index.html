@@ -6,21 +6,22 @@
 </head>
 <body>
   <h1>Styled web components</h1>
+  <a href="box.html">Box</a>
   <h2>Box demo</h2>
-  <fw-box width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif">
+  <sw-box width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif">
     <h3>Hello world</h3>
-  </fw-box>
+  </sw-box>
 
   <h2>Flex box demo</h2>
-  <fw-flex justify-content="center" flex-direction="row-reverse">
+  <sw-flex justify-content="center" flex-direction="row-reverse">
 
-    <fw-box m="1em" width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
+    <sw-box m="1em" width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
     <h3>Section 1</h3>
-  </fw-box>
-  <fw-box m="1em"  width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
+  </sw-box>
+  <sw-box m="1em"  width="500px" py="2em" color="red" bg="yellow" font-family="sans-serif" text-align="center">
     <h3>Section 2</h3>
-  </fw-box>
-  </fw-flex>
+  </sw-box>
+  </sw-flex>
 
   <h2>Custom card component</h2>
   <my-card border-radius="20px" bg="yellow" size="200px" p="1em" border-x="2px solid red">
@@ -28,9 +29,9 @@
   </my-card>
 
   <h2>User card</h2>
-  <fw-flex>
-    <img is="fw-avatar" border-radius="50%" width="128px" height="128px" src="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg" />
-    <fw-box p="2rem">
+  <sw-flex>
+    <sw-avatar host="img" border-radius="50%" width="128px" height="128px" src="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg" ></sw-avatar>
+    <sw-box p="2rem">
       <blockquote>
       <block-text font-weight="600" font-size="1.125rem" line-height="1.75rem">
         “Tailwind CSS is the only framework that I've seen scale
@@ -39,27 +40,27 @@
       </block-text>
     </blockquote>
     <figcaption class="font-medium">
-      <fw-box color="rgba(8,145,178,1)">
+      <sw-box color="rgba(8,145,178,1)">
         Sarah Dayan
-      </fw-box>
-      <fw-box color="rgba(107,114,128,1)">
+      </sw-box>
+      <sw-box color="rgba(107,114,128,1)">
         Staff Engineer, Algolia
-      </fw-box>
+      </sw-box>
     </figcaption>
-    </fw-box>
-  </fw-flex>
+    </sw-box>
+  </sw-flex>
 
   <h2>Grid demo</h2>
-  <fw-box m="2em">
-  <fw-grid grid-template-columns='100px 100px 100px' grid-gap="10px">
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">A</fw-box>
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">B</fw-box>
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">C</fw-box>
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">D</fw-box>
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">E</fw-box>
-    <fw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">F</fw-box>
-  </fw-grid>
-  </fw-box>
+  <sw-box m="2em">
+  <sw-grid grid-template-columns='100px 100px 100px' grid-gap="10px">
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">A</sw-box>
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">B</sw-box>
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">C</sw-box>
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">D</sw-box>
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">E</sw-box>
+    <sw-box bg="#444" color="#fff" border-radius="5px" p="20px" font-size="150%">F</sw-box>
+  </sw-grid>
+  </sw-box>
 
   <script src="demo.js" type="module"></script>
 
