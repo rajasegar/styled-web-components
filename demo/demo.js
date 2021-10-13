@@ -6,7 +6,7 @@ import {
   FlexboxProps,
   BorderProps,
   GridProps,
-} from './styled-web-components.min.js'
+} from '../src/index.js'
 
 class SWBox extends HTMLElement {
   constructor() {
